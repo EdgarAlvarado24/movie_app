@@ -1,4 +1,5 @@
 import React from 'react'
+import isUrlgHttp from 'is-url-http';
 
 const MovieCard = ({movie:
   {title, ratings_average, popularity_average ,image, release_date, genres}
@@ -6,8 +7,8 @@ const MovieCard = ({movie:
   return (
     <div className='movie-card'>
       <img 
-        src={image != '' ? 
-        image : '/my-first-react-app/public/no-movie.png'}
+        src={isUrlgHttp(image) ? 
+        image : '/no-movie.png'}
         alt={title}
       />
 
